@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dicarval <dicarval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/09 17:18:41 by dicarval          #+#    #+#             */
-/*   Updated: 2024/04/10 13:59:39 by dicarval         ###   ########.fr       */
+/*   Created: 2024/04/11 16:55:57 by dicarval          #+#    #+#             */
+/*   Updated: 2024/04/11 17:00:30 by dicarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char	*ft_strdup(const char *src)
 {
-	unsigned char		*d;
-	const unsigned char	*s;
+	char	*str;
+	int		buf_size;
 
-	typedef unsigned char BYTE;
-	if (dest == NULL && src == NULL)
+	buf_size = ft_strlen(src) + 1;
+	str = malloc(buf_size);
+	if (str == NULL)
 		return (NULL);
-	d = (BYTE *)dest;
-	s = (BYTE *)src;
-	while (n-- > 0)
-		*(d++) = *(s++);
-	return ((void *)dest);
+	ft_strlcpy (str, src, buf_size);
+	return (str);
 }

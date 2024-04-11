@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dicarval <dicarval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/09 17:18:41 by dicarval          #+#    #+#             */
-/*   Updated: 2024/04/10 13:59:39 by dicarval         ###   ########.fr       */
+/*   Created: 2024/04/10 14:40:38 by dicarval          #+#    #+#             */
+/*   Updated: 2024/04/11 17:17:56 by dicarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	unsigned char		*d;
-	const unsigned char	*s;
+	size_t	src_len;
 
-	typedef unsigned char BYTE;
-	if (dest == NULL && src == NULL)
-		return (NULL);
-	d = (BYTE *)dest;
-	s = (BYTE *)src;
-	while (n-- > 0)
-		*(d++) = *(s++);
-	return ((void *)dest);
+	src_len = ft_strlen(src);
+	if (dst == NULL || src == NULL || dstsize == 0)
+		return (src_len);
+	while (*src && --dstsize)
+		*dst++ = *src++;
+	*dst = '\0';
+	return (src_len);
 }

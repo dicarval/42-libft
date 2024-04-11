@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dicarval <dicarval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/09 17:18:41 by dicarval          #+#    #+#             */
-/*   Updated: 2024/04/10 13:59:39 by dicarval         ###   ########.fr       */
+/*   Created: 2024/04/11 17:06:56 by dicarval          #+#    #+#             */
+/*   Updated: 2024/04/11 17:38:00 by dicarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char *ft_substr (char const *s, unsigned int start, size_t len)
 {
-	unsigned char		*d;
-	const unsigned char	*s;
+	char	*str;
+	size_t	st_len;
+	size_t	subst_len;
 
-	typedef unsigned char BYTE;
-	if (dest == NULL && src == NULL)
+	if (s == NULL)
+		return(NULL);
+	st_len = ft_strlen (s);
+	if (start >= st_len)
+		return (ft_strdup(""));
+	subst_len = st_len - start;
+	if (len > subst_len)
+		len = subst_len;
+	str = malloc(len + 1);
+	if (str == NULL)
 		return (NULL);
-	d = (BYTE *)dest;
-	s = (BYTE *)src;
-	while (n-- > 0)
-		*(d++) = *(s++);
-	return ((void *)dest);
+	ft_strlcpy(str, s + start, len + 1)
+
 }

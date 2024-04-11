@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dicarval <dicarval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/09 17:18:41 by dicarval          #+#    #+#             */
-/*   Updated: 2024/04/10 13:59:39 by dicarval         ###   ########.fr       */
+/*   Created: 2024/04/11 13:43:59 by dicarval          #+#    #+#             */
+/*   Updated: 2024/04/11 14:29:34 by dicarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <string.h>
+#include <stdio.h>
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char *ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	unsigned char		*d;
-	const unsigned char	*s;
+	size_t	i;
+	size_t	j;
 
-	typedef unsigned char BYTE;
-	if (dest == NULL && src == NULL)
-		return (NULL);
-	d = (BYTE *)dest;
-	s = (BYTE *)src;
-	while (n-- > 0)
-		*(d++) = *(s++);
-	return ((void *)dest);
+	i = 0;
+	while (i < len && haystack[i] != '\0')
+	{
+		j = 0;
+		while (i+j < len && haystack[i + j] == needle[j] && needle[j] && needle[j] != '\0')
+			j++;
+		if (needle[j] == '\0')
+			return((char *)haystack + i);
+		i++;
+	}
+	return (NULL);
 }

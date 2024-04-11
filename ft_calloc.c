@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dicarval <dicarval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/09 17:18:41 by dicarval          #+#    #+#             */
-/*   Updated: 2024/04/10 13:59:39 by dicarval         ###   ########.fr       */
+/*   Created: 2024/04/11 16:36:23 by dicarval          #+#    #+#             */
+/*   Updated: 2024/04/11 16:46:26 by dicarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	unsigned char		*d;
-	const unsigned char	*s;
+	size_t bytes;
+	void *ptr;
 
-	typedef unsigned char BYTE;
-	if (dest == NULL && src == NULL)
+	bytes = nmemb * size;
+	if (size != 0 && ((bytes / size) != nmemb))
 		return (NULL);
-	d = (BYTE *)dest;
-	s = (BYTE *)src;
-	while (n-- > 0)
-		*(d++) = *(s++);
-	return ((void *)dest);
+	ptr = malloc(bytes);
+	if (ptr == NULL)
+		return (NULL);
+	ft_bzero(ptr, bytes);
+	return (ptr);
 }
