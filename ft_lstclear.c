@@ -6,7 +6,7 @@
 /*   By: dicarval <dicarval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 17:40:05 by dicarval          #+#    #+#             */
-/*   Updated: 2024/04/16 17:47:10 by dicarval         ###   ########.fr       */
+/*   Updated: 2024/04/17 11:28:48 by dicarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	current = *lst;
 	while (current != NULL)
 	{
-		tmp = current->next;
+		tmp = current;
 		current = current->next;
 		del(tmp->content);
 		free(tmp);

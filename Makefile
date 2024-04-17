@@ -6,7 +6,7 @@
 #    By: dicarval <dicarval@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/29 17:05:29 by dicarval          #+#    #+#              #
-#    Updated: 2024/04/16 15:08:44 by dicarval         ###   ########.fr        #
+#    Updated: 2024/04/17 11:18:43 by dicarval         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,24 +21,31 @@ SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 		ft_strncmp.c ft_strnstr.c ft_strtrim.c ft_substr.c ft_tolower.c \
 		ft_toupper.c
 
+SRCS_B = ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c ft_lstiter.c \
+		ft_lstlast.c ft_lstmap.c ft_lstnew.c ft_lstsize.c
+
 OBJS	= ${SRCS:.c=.o}
+OBJS_B	= ${SRCS_B:.c=.o}
 RM		= rm -f
 LIBC	= ar -rcs
 FLAGS	= -Wall -Wextra -Werror
+
+%.o: %.c
+	${CC} ${FLAGS} -c $< -o $@
 
 all: ${NAME}
 
 ${NAME}: ${OBJS}
 	${LIBC} ${NAME} ${OBJS}
 
-%.o: %.c
-	${CC} ${FLAGS} -c $< -o $@
+bonus: ${NAME} ${OBJS_B}
+	${LIBC} ${NAME} ${OBJS_B}
 
 fclean: clean
-	${RM} ${NAME}
+	${RM} ${NAME} $(bonus)
 
 clean:
-	${RM} ${OBJS}
+	${RM} ${OBJS} ${OBJS_B}
 
 re: fclean all
 
