@@ -6,7 +6,7 @@
 /*   By: dicarval <dicarval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 16:48:14 by dicarval          #+#    #+#             */
-/*   Updated: 2024/04/09 16:51:53 by dicarval         ###   ########.fr       */
+/*   Updated: 2024/04/15 14:41:24 by dicarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,14 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	while (n-- > 0)
-		*((unsigned char *)s + n) = 0;
+	unsigned char	*str;
+	int				i;
+
+	i = 0;
+	str = (unsigned char *)s;
+	while (n > 0)
+	{
+		str[i++] = 0;
+		n--;
+	}
 }

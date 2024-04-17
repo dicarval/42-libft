@@ -6,7 +6,7 @@
 /*   By: dicarval <dicarval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 10:01:58 by dicarval          #+#    #+#             */
-/*   Updated: 2024/04/11 14:32:09 by dicarval         ###   ########.fr       */
+/*   Updated: 2024/04/16 11:26:42 by dicarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <string.h>
 # include <stddef.h>
+# include <stdio.h>
 # include <limits.h>
 
 /* ************************************************************************** */
@@ -25,19 +26,19 @@
 
 typedef struct s_list
 {
-	void		*content;
+	void			*content;
 	struct s_list	*next;
-}	t_list;
+}					t_list;
 
 /* ************************************************************************** */
 /*                                  CHECK                                     */
 /* ************************************************************************** */
 
-int	ft_isalnum(int c);
-int	ft_isalpha(int c);
-int	ft_isascii(int c);
-int	ft_isdigit(int c);
-int	ft_isprint(int c);
+int		ft_isalnum(int c);
+int		ft_isalpha(int c);
+int		ft_isascii(int c);
+int		ft_isdigit(int c);
+int		ft_isprint(int c);
 
 /* ************************************************************************** */
 /*                                 MEMORY                                     */
@@ -71,7 +72,7 @@ char	*ft_strchr(char const *str, int c);
 char	*ft_strrchr(char const *str, int c);
 char	*ft_strdup(char const *src);
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
-char	ft_strjoin(char const *s1, char const *s2);
+char	*ft_strjoin(char const *s1, char const *s2);
 size_t	ft_strlcat(char *dest, const char *src, size_t n);
 size_t	ft_strlcpy(char *dest, char const *src, size_t n);
 size_t	ft_strlen(char const *str);
