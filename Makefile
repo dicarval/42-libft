@@ -6,7 +6,7 @@
 #    By: dicarval <dicarval@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/29 17:05:29 by dicarval          #+#    #+#              #
-#    Updated: 2024/04/19 12:00:06 by dicarval         ###   ########.fr        #
+#    Updated: 2024/04/19 15:21:46 by dicarval         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,7 @@ OBJS	= ${SRCS:.c=.o}
 OBJS_B	= ${SRCS_B:.c=.o}
 RM		= rm -f
 LIBC	= ar -rcs
+CC		= cc
 FLAGS	= -Wall -Wextra -Werror
 
 %.o: %.c
