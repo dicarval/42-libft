@@ -6,7 +6,7 @@
 /*   By: dicarval <dicarval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 11:05:15 by dicarval          #+#    #+#             */
-/*   Updated: 2024/04/18 15:43:49 by dicarval         ###   ########.fr       */
+/*   Updated: 2024/04/19 15:12:22 by dicarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,9 @@ char	*word_allocate(char const *str, char spltr)
 	int		i;
 
 	i = 0;
-	len_word = ft_strlen_s(str, spltr);//length of the string
-	word = (char *)malloc((len_word + 1) * sizeof(char));//malloc of length of the string
-	if (!word)
+	len_word = ft_strlen_s(str, spltr);
+	word = (char *)malloc((len_word + 1) * sizeof(char));
+	if (word == NULL)
 		return (NULL);
 	word[len_word] = 0;
 	while (str[i] != '\0' && in_string(str[i], spltr))
@@ -67,6 +67,8 @@ char	*word_allocate(char const *str, char spltr)
 	}
 	return (word);
 }
+//line 58 - length of the string
+//line 59 - malloc of length of the string
 
 char	**ft_split(char const *str, char spltr)
 {
@@ -75,22 +77,27 @@ char	**ft_split(char const *str, char spltr)
 	int		g;
 
 	g = 0;
-	number_str = count_strings(str, spltr);//count the number of strings
-	list_str = (char **)malloc((number_str + 1) * sizeof(char *));//malloc the array of strings
-	if (!list_str)
+	number_str = count_strings(str, spltr);
+	list_str = (char **)malloc((number_str + 1) * sizeof(char *));
+	if (list_str == NULL)
 		return (NULL);
 	list_str[number_str] = 0;
 	while (*str != '\0')
 	{
-		while (*str != '\0' && !in_string(*str, spltr))//moves foward until it finds a non-splitter
+		while (*str != '\0' && !in_string(*str, spltr))
 			str++;
 		if (*str != '\0')
 		{
-			list_str[g] = word_allocate(str, spltr);//allocates the string to the correct order
+			list_str[g] = word_allocate(str, spltr);
 			g++;
 		}
-		while (*str != '\0' && in_string(*str, spltr))//moves foward until it finds a splitter or the end of the string
+		while (*str != '\0' && in_string(*str, spltr))
 			str++;
 	}
 	return (list_str);
 }
+//line 80 - count the number of strings
+//line 81 - malloc the array of strings
+//line 87 - moves forward until it finds a non-splitter
+//line 91 - allocates the string to the correct order
+//line 94 - moves forward until it finds a splitter or the end of the string

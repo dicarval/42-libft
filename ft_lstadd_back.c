@@ -6,7 +6,7 @@
 /*   By: dicarval <dicarval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 16:50:30 by dicarval          #+#    #+#             */
-/*   Updated: 2024/04/18 18:00:42 by dicarval         ###   ########.fr       */
+/*   Updated: 2024/04/19 13:46:10 by dicarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	else
 	{
 		last = ft_lstlast(*lst);
-		last->next = new;//adds the node ’new’ at the end of the list.
+		last->next = new;
 	}
 }
+//line 25 - finds the last node of the list.
+//line 26 - adds the node ’new’ at the end of the list.

@@ -6,7 +6,7 @@
 #    By: dicarval <dicarval@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/29 17:05:29 by dicarval          #+#    #+#              #
-#    Updated: 2024/04/17 11:45:24 by dicarval         ###   ########.fr        #
+#    Updated: 2024/04/19 12:00:06 by dicarval         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ LIBC	= ar -rcs
 FLAGS	= -Wall -Wextra -Werror
 
 %.o: %.c
-	${CC} ${FLAGS} -c $< -o $@
+	${CC} ${FLAGS} -c $^ -o $@
 
 all: ${NAME}
 

@@ -6,7 +6,7 @@
 /*   By: dicarval <dicarval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 16:22:40 by dicarval          #+#    #+#             */
-/*   Updated: 2024/04/18 15:58:32 by dicarval         ###   ########.fr       */
+/*   Updated: 2024/04/19 13:38:13 by dicarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ char	*ft_itoa(int n)
 	str_nbr = (char *)malloc(size_str + 1);
 	if (!str_nbr)
 		return (NULL);
-	str_nbr[size_str] = '\0';//place a NULL termminator in the string
+	str_nbr[size_str] = '\0';
 	if (nbr == 0)
 		*str_nbr = '0';
 	if (nbr < 0)
@@ -55,9 +55,12 @@ char	*ft_itoa(int n)
 	}
 	while (nbr > 0)
 	{
-		str_nbr[size_str - 1] = (nbr % 10) + '0';//starts from the end of the string, the units
-		nbr /= 10;//removes the last digit
+		str_nbr[size_str - 1] = (nbr % 10) + '0';
+		nbr /= 10;
 		size_str--;
 	}
 	return (str_nbr);
 }
+//line 48 - place a NULL termminator in the string
+//line 58 - starts from the end of the string, the units
+//line 59 - removes the last digit

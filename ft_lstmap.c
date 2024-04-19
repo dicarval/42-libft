@@ -6,7 +6,7 @@
 /*   By: dicarval <dicarval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 17:51:22 by dicarval          #+#    #+#             */
-/*   Updated: 2024/04/18 18:02:24 by dicarval         ###   ########.fr       */
+/*   Updated: 2024/04/19 13:55:43 by dicarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	while (lst)
 	{
 		if (f)
-			new_node = ft_lstnew(f(lst->content));//applies the function ’f’ on the content of each node.
+			new_node = ft_lstnew(f(lst->content));
 		else
 			new_node = ft_lstnew(lst->content);
 		if (!new_node)
@@ -31,8 +31,10 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 			ft_lstclear(&new_lst, del);
 			return (NULL);
 		}
-		ft_lstadd_back(&new_lst, new_node);//append the new node to the end of the list
+		ft_lstadd_back(&new_lst, new_node);
 		lst = lst->next;
 	}
 	return (new_lst);
 }
+//line 26 - applies the function 'f' on the content of each node.
+//line 34 - append the new node to the end of the list

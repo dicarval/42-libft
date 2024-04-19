@@ -6,7 +6,7 @@
 /*   By: dicarval <dicarval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 17:59:13 by dicarval          #+#    #+#             */
-/*   Updated: 2024/04/18 13:49:34 by dicarval         ###   ########.fr       */
+/*   Updated: 2024/04/19 15:04:28 by dicarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 
 	j = 0;
 	k = 0;
+	if (size == 0)
+		return (0);
 	while (dst[j] && j < size)
 		j++;
 	while ((src[k]) && ((j + k + 1) < size))
