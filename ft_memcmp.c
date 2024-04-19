@@ -6,7 +6,7 @@
 /*   By: dicarval <dicarval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 12:23:43 by dicarval          #+#    #+#             */
-/*   Updated: 2024/04/16 11:29:02 by dicarval         ###   ########.fr       */
+/*   Updated: 2024/04/18 12:57:33 by dicarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	while (i < n)
 	{
 		if (str1[i] != str2[i])
-			return ((unsigned char)str1[i] - (unsigned char)str2[i]);
+			return (str1[i] - str2[i]);
 		i++;
 	}
 	return (0);

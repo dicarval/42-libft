@@ -6,7 +6,7 @@
 /*   By: dicarval <dicarval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 11:05:39 by dicarval          #+#    #+#             */
-/*   Updated: 2024/04/17 17:35:55 by dicarval         ###   ########.fr       */
+/*   Updated: 2024/04/18 18:11:46 by dicarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strrchr(const char *s, int c)
 	i = ft_strlen(s);
 	while (i >= 0)
 	{
-		if ((char)c == *(s + i))
+		if ((char)c == s[i])
 			return ((char *)s + i);
 		i--;
 	}

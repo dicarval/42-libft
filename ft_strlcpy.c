@@ -6,7 +6,7 @@
 /*   By: dicarval <dicarval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 14:40:38 by dicarval          #+#    #+#             */
-/*   Updated: 2024/04/15 14:00:57 by dicarval         ###   ########.fr       */
+/*   Updated: 2024/04/18 13:47:35 by dicarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	size_t	src_size;
+	size_t	srcsize;
 
-	src_size = ft_strlen(src);
+	srcsize = ft_strlen(src);
 	if (dst == NULL || src == NULL || dstsize == 0)
-		return (src_size);
+		return (srcsize);
 	while (*src && --dstsize)
 	{
 		*dst = *src;
@@ -26,5 +26,5 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 		src++;
 	}
 	*dst = '\0';
-	return (src_size);
+	return (srcsize);
 }

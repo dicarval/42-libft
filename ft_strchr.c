@@ -6,7 +6,7 @@
 /*   By: dicarval <dicarval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 10:28:58 by dicarval          #+#    #+#             */
-/*   Updated: 2024/04/15 15:03:46 by dicarval         ###   ########.fr       */
+/*   Updated: 2024/04/18 13:17:25 by dicarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,13 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s != (char)c && *s)
-		++s;
-	if (*s)
-		return ((char *)s);
-	else if (!*s && (char)c == '\0')
-		return ((char *)s);
-	else
-		return (NULL);
+	while (*s != '\0')
+	{
+		if (*s == (char)c)
+			return ((char *) s);
+		s++;
+	}
+	if (*s == (char)c)
+		return ((char *) s);
+	return (NULL);
 }

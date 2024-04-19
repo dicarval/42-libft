@@ -6,18 +6,18 @@
 /*   By: dicarval <dicarval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 15:54:29 by dicarval          #+#    #+#             */
-/*   Updated: 2024/04/15 15:04:08 by dicarval         ###   ########.fr       */
+/*   Updated: 2024/04/18 13:04:21 by dicarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+size_t	ft_strlen(const char *str)
 {
 	size_t	len;
 
 	len = 0;
-	while (s[len])
-		++len;
+	while (str[len] != '\0')
+		len++;
 	return (len);
 }

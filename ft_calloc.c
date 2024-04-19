@@ -6,7 +6,7 @@
 /*   By: dicarval <dicarval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 16:36:23 by dicarval          #+#    #+#             */
-/*   Updated: 2024/04/15 14:44:55 by dicarval         ###   ########.fr       */
+/*   Updated: 2024/04/19 10:37:48 by dicarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,10 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	size_t	bytes;
 	void	*ptr;
 
+	if (nmemb == 0 || size == 0)
+		return (malloc(0));
 	bytes = nmemb * size;
-	if (size != 0 && ((bytes / size) != nmemb))
+	if (bytes / nmemb != size)
 		return (NULL);
 	ptr = malloc(bytes);
 	if (ptr == NULL)

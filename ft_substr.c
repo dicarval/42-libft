@@ -6,7 +6,7 @@
 /*   By: dicarval <dicarval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 17:06:56 by dicarval          #+#    #+#             */
-/*   Updated: 2024/04/15 14:49:34 by dicarval         ###   ########.fr       */
+/*   Updated: 2024/04/18 15:19:20 by dicarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (s == NULL)
 		return (NULL);
-	st_len = ft_strlen (s);
+	st_len = ft_strlen(s);
 	if (start >= st_len)
 		return (ft_strdup(""));
 	subst_len = st_len - start;

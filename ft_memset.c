@@ -6,7 +6,7 @@
 /*   By: dicarval <dicarval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 16:47:22 by dicarval          #+#    #+#             */
-/*   Updated: 2024/04/17 15:31:20 by dicarval         ###   ########.fr       */
+/*   Updated: 2024/04/19 11:26:55 by dicarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,13 @@
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	while (len-- > 0)
-		*((unsigned char *)b + len) = c;
+	unsigned char	*ptr;
+
+	ptr = (unsigned char *)b;
+	while (len > 0)
+	{
+		*(ptr + (len - 1)) = c;
+		len--;
+	}
 	return (b);
 }

@@ -6,7 +6,7 @@
 /*   By: dicarval <dicarval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 11:57:49 by dicarval          #+#    #+#             */
-/*   Updated: 2024/04/15 14:46:38 by dicarval         ###   ########.fr       */
+/*   Updated: 2024/04/18 18:06:07 by dicarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	char	*str;
 	size_t	i;
 
-	str = (char *) s;
+	str = (char *)s;
 	i = 0;
 	while (i < n)
 	{
 		if ((unsigned char)str[i] == (unsigned char)c)
-			return ((unsigned char *)s + i);
+			return ((char *) str + i);
 		i++;
 	}
 	return (NULL);
