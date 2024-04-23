@@ -6,7 +6,7 @@
 /*   By: dicarval <dicarval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 17:59:13 by dicarval          #+#    #+#             */
-/*   Updated: 2024/04/23 12:18:33 by dicarval         ###   ########.fr       */
+/*   Updated: 2024/04/23 13:25:21 by dicarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 	size_t	j;
-	size_t srclen;
+	size_t	srclen;
 
 	i = 0;
 	j = 0;
