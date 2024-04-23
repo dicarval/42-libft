@@ -6,13 +6,13 @@
 /*   By: dicarval <dicarval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 14:27:52 by dicarval          #+#    #+#             */
-/*   Updated: 2024/04/19 15:11:25 by dicarval         ###   ########.fr       */
+/*   Updated: 2024/04/23 12:23:10 by dicarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_is_set(char c, char const *set)
+static int	ft_is_set(char c, char const *set)
 {
 	while (*set)
 	{

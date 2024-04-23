@@ -6,20 +6,20 @@
 /*   By: dicarval <dicarval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 11:05:15 by dicarval          #+#    #+#             */
-/*   Updated: 2024/04/19 15:12:22 by dicarval         ###   ########.fr       */
+/*   Updated: 2024/04/23 12:20:50 by dicarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	in_string(char c, char spltr)
+static int	in_string(char c, char spltr)
 {
 	if (spltr == c)
 		return (0);
 	return (1);
 }
 
-int	ft_strlen_s(char const *str, char spltr)
+static int	ft_strlen_s(char const *str, char spltr)
 {
 	int	i;
 
@@ -29,7 +29,7 @@ int	ft_strlen_s(char const *str, char spltr)
 	return (i);
 }
 
-int	count_strings(char const *str, char spltr)
+static int	count_strings(char const *str, char spltr)
 {
 	int	i;
 	int	counter;
@@ -48,7 +48,7 @@ int	count_strings(char const *str, char spltr)
 	return (counter);
 }
 
-char	*word_allocate(char const *str, char spltr)
+static char	*word_allocate(char const *str, char spltr)
 {
 	int		len_word;
 	char	*word;

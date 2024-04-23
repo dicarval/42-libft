@@ -6,7 +6,7 @@
 /*   By: dicarval <dicarval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 11:05:58 by dicarval          #+#    #+#             */
-/*   Updated: 2024/04/15 11:06:13 by dicarval         ###   ########.fr       */
+/*   Updated: 2024/04/23 12:25:01 by dicarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
+	if (s == NULL)
+		return ;
 	while (*s)
 	{
 		write(fd, &(*s), 1);
