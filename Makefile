@@ -6,7 +6,7 @@
 #    By: dicarval <dicarval@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/29 17:05:29 by dicarval          #+#    #+#              #
-#    Updated: 2024/04/19 15:21:46 by dicarval         ###   ########.fr        #
+#    Updated: 2024/04/24 10:34:21 by dicarval         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,10 +31,10 @@ LIBC	= ar -rcs
 CC		= cc
 FLAGS	= -Wall -Wextra -Werror
 
+all: ${NAME}
+
 %.o: %.c
 	${CC} ${FLAGS} -c $^ -o $@
-
-all: ${NAME}
 
 ${NAME}: ${OBJS}
 	${LIBC} ${NAME} ${OBJS}
