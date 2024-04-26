@@ -6,7 +6,7 @@
 /*   By: dicarval <dicarval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 11:05:15 by dicarval          #+#    #+#             */
-/*   Updated: 2024/04/23 12:20:50 by dicarval         ###   ########.fr       */
+/*   Updated: 2024/04/26 11:27:54 by dicarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,8 @@ char	**ft_split(char const *str, char spltr)
 	int		g;
 
 	g = 0;
+	if (str == NULL)
+		return (NULL);
 	number_str = count_strings(str, spltr);
 	list_str = (char **)malloc((number_str + 1) * sizeof(char *));
 	if (list_str == NULL)
@@ -99,5 +101,5 @@ char	**ft_split(char const *str, char spltr)
 //line 80 - count the number of strings
 //line 81 - malloc the array of strings
 //line 87 - moves forward until it finds a non-splitter
-//line 91 - allocates the string to the correct order
+//line 91 - allocates the string in the correct order
 //line 94 - moves forward until it finds a splitter or the end of the string

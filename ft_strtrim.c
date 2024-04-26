@@ -6,7 +6,7 @@
 /*   By: dicarval <dicarval@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 14:27:52 by dicarval          #+#    #+#             */
-/*   Updated: 2024/04/23 12:23:10 by dicarval         ###   ########.fr       */
+/*   Updated: 2024/04/26 11:28:52 by dicarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ char	*ft_strtrim(char const *str, char const *set)
 	int		trim_len;
 
 	i = 0;
+	if (str == NULL)
+		return (NULL);
 	while (str[i] && ft_is_set(str[i], set))
 		i++;
 	j = ft_strlen(str) - 1;
