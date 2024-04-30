@@ -6,7 +6,7 @@
 #    By: dicarval <dicarval@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/29 17:05:29 by dicarval          #+#    #+#              #
-#    Updated: 2024/04/29 11:44:20 by dicarval         ###   ########.fr        #
+#    Updated: 2024/04/30 12:05:36 by dicarval         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,6 @@ ${NAME}: ${OBJS}
 
 bonus: ${NAME} ${OBJS_B}
 	${LIBC} ${NAME} ${OBJS_B}
-	touch bonus
 
 fclean: clean
 	${RM} ${NAME} $(bonus)
