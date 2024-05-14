@@ -6,7 +6,7 @@
 #    By: dicarval <dicarval@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/29 17:05:29 by dicarval          #+#    #+#              #
-#    Updated: 2024/05/03 13:37:54 by dicarval         ###   ########.fr        #
+#    Updated: 2024/05/13 12:05:19 by dicarval         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,14 +27,14 @@ SRCS_B = ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c ft_lsti
 OBJS	= ${SRCS:.c=.o}
 OBJS_B	= ${SRCS_B:.c=.o}
 RM		= @rm -f
-LIBC	= @ar -rcs
-CC		= @cc
+LIBC	= ar -rcs
+CC		= cc
 FLAGS	= -Wall -Wextra -Werror
 
 all: ${NAME}
 
 %.o: %.c
-	${CC} ${FLAGS} -c $^ -o $@
+	@${CC} ${FLAGS} -c $^ -o $@
 
 ${NAME}: ${OBJS}
 	${LIBC} ${NAME} ${OBJS}
@@ -44,11 +44,12 @@ bonus: ${NAME} ${OBJS_B}
 	touch bonus
 
 fclean: clean
-	${RM} ${NAME} $(bonus)
+	@${RM} ${NAME} $(bonus)
 
 clean:
-	${RM} ${OBJS} ${OBJS_B}
+	@${RM} ${OBJS} ${OBJS_B} bonus
+	@echo "Cleaned"
 
 re: fclean all
 
-.PHONY: all bonus clean fclean re .c.o
+.PHONY: all clean fclean re .c.o
